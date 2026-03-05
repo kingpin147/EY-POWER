@@ -1,3 +1,4 @@
+/** Component for displaying status or labels with aesthetic colors */
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
