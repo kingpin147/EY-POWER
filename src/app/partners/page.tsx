@@ -9,42 +9,41 @@ export const metadata: Metadata = {
 };
 
 const offices = [
-    // ... (previous offices stay same)
     {
         city: "Karachi (Head Office)",
         address: "Plot 123, Korangi Industrial Area, Sector 15, Karachi",
-        type: "National Headquarter & Engineering Hub",
+        type: "National HQ & Engineering Hub",
         phone: "+92 21 3XXX XXXX"
     },
     {
         city: "Lahore",
         address: "Gulberg III, Near Hussain Chowk, Lahore",
-        type: "Regional Sales & Support Center",
+        type: "Regional Sales & Support Hub",
         phone: "+92 42 3XXX XXXX"
     },
     {
         city: "Islamabad",
         address: "Sector I-10 Industrial Area, Islamabad",
-        type: "Northern Regional Hub",
+        type: "Northern Regional Center",
         phone: "+92 51 4XXX XXXX"
     },
     {
-        city: "Multan",
-        address: "Vehari Road, Industrial Estate, Multan",
-        type: "Southern Punjab Support Unit",
-        phone: "+92 61 6XXX XXXX"
+        city: "Sargodha",
+        address: "University Road, Sargodha",
+        type: "Central Punjab Operations",
+        phone: "+92 48 3XXX XXXX"
     },
     {
-        city: "Faisalabad",
-        address: "Susan Road, Faisalabad",
-        type: "Authorized Service Point",
-        phone: "+92 41 8XXX XXXX"
+        city: "Chakwal",
+        address: "Talagang Road, Chakwal",
+        type: "Authorized Service Unit",
+        phone: "+92 54 3XXX XXXX"
     },
     {
-        city: "Peshawar",
-        address: "Hayatabad Industrial Estate, Peshawar",
-        type: "KPK Regional Support",
-        phone: "+92 91 5XXX XXXX"
+        city: "Hyderabad",
+        address: "SITE Industrial Area, Hyderabad",
+        type: "Southern Sales Hub",
+        phone: "+92 22 2XXX XXXX"
     }
 ];
 
