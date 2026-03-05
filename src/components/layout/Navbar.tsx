@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-    { href: "/products", label: "Products" },
+    { href: "/products/lithium", label: "Batteries" },
+    { href: "/solutions/bess", label: "Industrial ESS" },
     { href: "/technology", label: "Technology" },
-    { href: "/applications", label: "Applications" },
-    { href: "/partners", label: "Partners" },
-    { href: "/resources", label: "Resources" },
+    { href: "/distributors", label: "Distributors" },
+    { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -45,17 +45,11 @@ export function Navbar() {
 
                 {/* Desktop Actions */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <Link href="/contact">
+                    <Link href="/solutions/bess#inquire">
                         <Button
-                            variant="ghost"
-                            className="text-accent border border-accent/20 hover:bg-accent hover:text-black"
+                            className="bg-accent text-black font-black hover:bg-yellow-400 h-11 px-8 uppercase tracking-widest text-[10px] transition-all active:scale-95 shadow-lg shadow-accent/20 border-b-2 border-black/10"
                         >
                             B2B Inquiry
-                        </Button>
-                    </Link>
-                    <Link href="/contact">
-                        <Button className="bg-accent text-black font-bold hover:bg-accent/90">
-                            Get Started
                         </Button>
                     </Link>
                 </div>
@@ -63,11 +57,9 @@ export function Navbar() {
                 {/* Mobile menu */}
                 <div className="lg:hidden flex items-center gap-4">
                     {/* B2B Inquiry button on mobile (condensed) */}
-                    <Link href="/contact" className="hidden sm:block">
+                    <Link href="/solutions/bess#inquire" className="hidden sm:block">
                         <Button
-                            variant="ghost"
-                            size="sm"
-                            className="text-accent border border-accent/20 px-3 h-9 text-xs"
+                            className="bg-accent text-black font-black px-4 h-9 text-[10px] uppercase tracking-widest"
                         >
                             B2B Inquiry
                         </Button>
@@ -99,14 +91,9 @@ export function Navbar() {
                                 ))}
                             </div>
                             <div className="p-6 mt-auto space-y-3 border-t border-white/10 bg-zinc-900/50">
-                                <Link href="/contact" className="block w-full">
-                                    <Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700 h-12 font-bold border border-white/5">
+                                <Link href="/solutions/bess#inquire" className="block w-full">
+                                    <Button className="w-full bg-accent text-black hover:bg-yellow-400 h-14 font-black transition-all active:scale-95 uppercase tracking-widest text-xs">
                                         B2B Inquiry
-                                    </Button>
-                                </Link>
-                                <Link href="/contact" className="block w-full">
-                                    <Button className="w-full bg-accent text-black hover:bg-yellow-400 h-12 font-black transition-all active:scale-95">
-                                        Get Started
                                     </Button>
                                 </Link>
                                 <p className="text-[10px] text-center text-zinc-500 uppercase font-black tracking-widest pt-4">

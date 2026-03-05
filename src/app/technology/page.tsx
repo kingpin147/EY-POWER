@@ -1,130 +1,129 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "LiFePO4 Battery Technology | EY Power Pakistan",
-    description: "Learn about Advanced Lithium Iron Phosphate (LFP) chemistry, safety standards, and 6000+ cycle lifespan of EY Power batteries.",
-};
+import { Footer } from "@/components/layout/Footer";
+import { Badge } from "@/components/ui/badge";
+import { 
+  Zap, 
+  ShieldCheck, 
+  Cpu, 
+  ThermometerSnowflake, 
+  Settings2,
+  Atom
+} from "lucide-react";
 
 export default function TechnologyPage() {
-    return (
-        <main className="min-h-screen flex flex-col pt-20">
-            <Navbar />
+  return (
+    <main className="min-h-screen bg-black text-white">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-24 border-b border-white/5 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl space-y-8">
+            <Badge variant="accent" className="uppercase tracking-widest px-4 py-1">Inside the Tech</Badge>
+            <h1 className="text-4xl md:text-7xl font-heading font-black tracking-tighter uppercase leading-[0.9]">
+              The Science of <br />
+              <span className="text-accent">Industrial Reliability</span>
+            </h1>
+            <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+              We don't just sell batteries; we engineer energy systems.
+              Our LiFePO4 technology is optimized for the harsh electrical and thermal conditions of the Pakistani grid.
+            </p>
+          </div>
+        </div>
+        {/* Abstract background element */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 blur-[150px] rounded-full -mr-96 -mt-96 pointer-events-none" />
+      </section>
 
-            {/* Hero / Header */}
-            <section className="py-20 bg-black text-white">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-3xl space-y-6">
-                        <h1 className="text-4xl lg:text-6xl font-heading font-black tracking-tight">
-                            ADVANCED <span className="text-accent">LiFePO4</span> CHEMISTRY
-                        </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
-                            Why EY Power chooses Lithium Iron Phosphate (LFP) as the foundation for Pakistan's most reliable energy storage solutions.
-                        </p>
+      {/* LiFePO4 Vs Others */}
+      <section className="py-24 bg-white text-black">
+        <div className="container mx-auto px-6">
+           <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                 <h2 className="text-3xl md:text-5xl font-heading font-black tracking-tight uppercase">Why LiFePO4?</h2>
+                 <p className="text-muted-foreground text-lg">Lithium Iron Phosphate (LiFePO4) is the gold standard for industrial and residential storage due to its inherent safety and cycle life.</p>
+                 
+                 <div className="grid grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                        <div className="w-16 h-16 bg-black text-accent rounded-2xl flex items-center justify-center mb-6">
+                           <ShieldCheck className="w-8 h-8" />
+                        </div>
+                       <h4 className="font-bold uppercase tracking-tight">Thermal Stability</h4>
+                       <p className="text-sm text-muted-foreground">Highest resistance to "thermal runaway" compared to NMC or Lead-Acid.</p>
                     </div>
-                </div>
-            </section>
+                    <div className="space-y-4">
+                        <div className="w-16 h-16 bg-black text-accent rounded-2xl flex items-center justify-center mb-6">
+                           <Atom className="w-8 h-8" />
+                        </div>
+                       <h4 className="font-bold uppercase tracking-tight">Eco-Friendly</h4>
+                       <p className="text-sm text-muted-foreground">Zero Cobalt or Lead usage. Recyclable and sustainable for 15+ years.</p>
+                    </div>
+                 </div>
+              </div>
+              
+              <div className="bg-zinc-900 rounded-[3rem] p-10 md:p-16 text-white space-y-10 border border-zinc-800 shadow-2xl">
+                 <div className="flex justify-between items-end border-b border-zinc-700 pb-6">
+                    <div>
+                       <p className="text-accent text-[10px] font-black uppercase tracking-widest mb-1">Total Life Cycle</p>
+                       <h4 className="text-4xl font-black font-heading tracking-tighter">6000+</h4>
+                    </div>
+                    <p className="text-zinc-500 text-xs font-bold font-mono">VS 1500 (Traditional)</p>
+                 </div>
+                 <div className="flex justify-between items-end border-b border-zinc-700 pb-6">
+                    <div>
+                       <p className="text-accent text-[10px] font-black uppercase tracking-widest mb-1">Depth of Discharge</p>
+                       <h4 className="text-4xl font-black font-heading tracking-tighter">95%</h4>
+                    </div>
+                    <p className="text-zinc-500 text-xs font-bold font-mono">VS 50% (Lead Acid)</p>
+                 </div>
+                 <div className="flex justify-between items-end">
+                    <div>
+                       <p className="text-accent text-[10px] font-black uppercase tracking-widest mb-1">Operating Temp</p>
+                       <h4 className="text-4xl font-black font-heading tracking-tighter">60°C</h4>
+                    </div>
+                    <p className="text-zinc-500 text-xs font-bold font-mono">Thermal Tolerance</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
 
-            {/* Main Technology Content */}
-            <section className="py-24 bg-white">
-                <div className="container mx-auto px-6">
-                    <Tabs defaultValue="safety" className="w-full">
-                        <TabsList className="grid w-full grid-cols-3 h-16 bg-muted/50 p-1 mb-12">
-                            <TabsTrigger value="safety" className="text-lg font-heading font-bold data-[state=active]:bg-black data-[state=active]:text-accent transition-all">UNMATCHED SAFETY</TabsTrigger>
-                            <TabsTrigger value="lifespan" className="text-lg font-heading font-bold data-[state=active]:bg-black data-[state=active]:text-accent transition-all">EXTENDED LIFESPAN</TabsTrigger>
-                            <TabsTrigger value="efficiency" className="text-lg font-heading font-bold data-[state=active]:bg-black data-[state=active]:text-accent transition-all">SYSTEM EFFICIENCY</TabsTrigger>
-                        </TabsList>
+      {/* Engineering Internals */}
+      <section className="py-24 border-t border-white/5">
+         <div className="container mx-auto px-6">
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+               <h2 className="text-3xl md:text-5xl font-heading font-black tracking-tight uppercase">Proprietary Engineering</h2>
+               <p className="text-zinc-400">Our in-house design team focuses on three core pillars of battery intelligence.</p>
+            </div>
 
-                        <TabsContent value="safety" className="space-y-12">
-                            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                                <div className="space-y-6">
-                                    <h2 className="text-3xl font-heading font-bold">Thermal Stability & Safety</h2>
-                                    <p className="text-lg text-muted-foreground">
-                                        LiFePO4 is non-combustible. Unlike NMC (Nickel Manganese Cobalt) chemistries, LFP does not suffer from thermal runaway. Even under extreme conditions like puncture or short-circuit, it remains stable.
-                                    </p>
-                                    <ul className="space-y-3">
-                                        <li className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-accent rounded-full" />
-                                            <span>High thermal runaway threshold (600°C+)</span>
-                                        </li>
-                                        <li className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-accent rounded-full" />
-                                            <span>No toxic fumes or risk of oxygen release during failure</span>
-                                        </li>
-                                        <li className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-accent rounded-full" />
-                                            <span>Passive cooling design optimized for Pakistani heat</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="relative aspect-video bg-zinc-100 rounded-3xl border-2 border-dashed border-zinc-200 flex items-center justify-center p-12 text-center overflow-hidden">
-                                    <div className="absolute top-4 left-4 bg-black text-accent px-3 py-1 text-xs font-bold uppercase rounded">Simulation</div>
-                                    <p className="text-sm font-mono text-zinc-400">Thermal Gradient Visualization</p>
-                                </div>
-                            </div>
-                        </TabsContent>
+            <div className="grid md:grid-cols-3 gap-8">
+               <div className="p-8 border border-white/10 rounded-3xl bg-zinc-900/50 hover:bg-zinc-900 transition-colors space-y-6">
+                  <div className="w-14 h-14 bg-accent text-black rounded-2xl flex items-center justify-center">
+                    <Cpu className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">Active BMS</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">Intelligence at the cell level. Our Bus Management System (BMS) balances charge, protects against over-voltage, and maximizes capacity utilization.</p>
+               </div>
 
-                        <TabsContent value="lifespan" className="space-y-12">
-                            <div className="grid lg:grid-cols-2 gap-16 items-center">
-                                <div className="order-2 lg:order-1 relative aspect-video bg-zinc-100 rounded-3xl border-2 border-dashed border-zinc-200 flex items-center justify-center text-center">
-                                    <p className="text-sm font-mono text-zinc-400">Degradation Curve Analysis</p>
-                                </div>
-                                <div className="order-1 lg:order-2 space-y-6">
-                                    <h2 className="text-3xl font-heading font-bold">6000+ Cycles. 15+ Year Life.</h2>
-                                    <p className="text-lg text-muted-foreground">
-                                        EY Power batteries are engineered for longevity. While traditional lead-acid batteries fail within 1-2 years, our LFP cells maintain superior capacity even after a decade of daily heavy-duty use.
-                                    </p>
-                                    <Accordion type="single" collapsible className="w-full">
-                                        <AccordionItem value="item-1">
-                                            <AccordionTrigger className="text-lg font-bold">Deep Discharge (100% DoD)</AccordionTrigger>
-                                            <AccordionContent>
-                                                Unlike other chemistries that degrade quickly when fully discharged, LFP maintains high cycle counts even at 100% Depth of Discharge.
-                                            </AccordionContent>
-                                        </AccordionItem>
-                                        <AccordionItem value="item-2">
-                                            <AccordionTrigger className="text-lg font-bold">Low Internal Resistance</AccordionTrigger>
-                                            <AccordionContent>
-                                                Reduces heat generation during fast charging/discharging, further preserving the chemical structure of the cell.
-                                            </AccordionContent>
-                                        </AccordionItem>
-                                    </Accordion>
-                                </div>
-                            </div>
-                        </TabsContent>
+               <div className="p-8 border border-white/10 rounded-3xl bg-zinc-900/50 hover:bg-zinc-900 transition-colors space-y-6">
+                  <div className="w-14 h-14 bg-accent text-black rounded-2xl flex items-center justify-center">
+                    <ThermometerSnowflake className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">Thermal Control</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">Integrated airflow channels and premium heat-sink casing ensure cells stay within optimal operating range even in 45°C ambient heat.</p>
+               </div>
 
-                        <TabsContent value="efficiency" className="space-y-12">
-                            <div className="max-w-4xl mx-auto text-center space-y-8">
-                                <h2 className="text-3xl font-heading font-bold">98% Round-Trip Efficiency</h2>
-                                <p className="text-lg text-muted-foreground">
-                                    Minimize energy loss during conversion. EY Power systems ensure that the energy you harvest from the sun or grid is available when you need it, with minimal heat dissipated.
-                                </p>
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                    {[
-                                        { label: "Fast Charging", value: "1C Rate" },
-                                        { label: "Energy Density", value: "High" },
-                                        { label: "Maintenance", value: "Zero" },
-                                        { label: "Weight", value: "40% Lighter" }
-                                    ].map((stat, i) => (
-                                        <div key={i} className="p-6 bg-zinc-50 border border-zinc-100 rounded-2xl">
-                                            <div className="text-2xl font-black">{stat.value}</div>
-                                            <div className="text-xs text-zinc-500 uppercase tracking-widest mt-1">{stat.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </TabsContent>
-                    </Tabs>
-                </div>
-            </section>
+               <div className="p-8 border border-white/10 rounded-3xl bg-zinc-900/50 hover:bg-zinc-900 transition-colors space-y-6">
+                  <div className="w-14 h-14 bg-accent text-black rounded-2xl flex items-center justify-center">
+                    <Settings2 className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">Modular Scaling</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">Designed for Daisy-Chain parallelism. Our architecture allows simple plug-and-play expansion as your energy needs grow.</p>
+               </div>
+            </div>
+         </div>
+      </section>
 
-            {/* Footer */}
-            <footer className="mt-auto py-12 bg-black border-t border-white/10 text-white/40 text-sm">
-                <div className="container mx-auto px-6 text-center">
-                    &copy; {new Date().getFullYear()} EY POWER. Engineering Tomorrow, Scaling Today.
-                </div>
-            </footer>
-        </main>
-    );
+      <Footer />
+    </main>
+  );
 }

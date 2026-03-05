@@ -71,13 +71,13 @@ export default function ApplicationsPage() {
                                 <CardHeader className="bg-white pb-4">
                                     <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">{app.icon}</div>
                                     <CardTitle className="text-2xl font-heading font-bold">{app.title}</CardTitle>
-                                    <CardDescription className="text-accent font-bold uppercase tracking-widest text-xs mt-1">{app.description}</CardDescription>
+                                    <CardDescription className="text-zinc-500 font-bold uppercase tracking-widest text-[10px] mt-2 group-hover:text-accent transition-colors">{app.description}</CardDescription>
                                 </CardHeader>
                                 <CardContent className="bg-white pb-8">
                                     <p className="text-muted-foreground leading-relaxed">
                                         {app.content}
                                     </p>
-                                    <Button variant="link" className="px-0 mt-6 text-black font-bold group-hover:text-accent group-hover:translate-x-1 transition-all">
+                                    <Button variant="link" className="px-0 mt-6 text-black font-black uppercase tracking-widest text-[10px] group-hover:text-accent group-hover:translate-x-1 transition-all">
                                         View Case Study &rarr;
                                     </Button>
                                 </CardContent>

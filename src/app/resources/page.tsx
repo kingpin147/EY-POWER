@@ -72,9 +72,9 @@ export default function ResourcesPage() {
                         </div>
                         <div className="flex flex-wrap gap-2 pt-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500">
                             <span>Popular:</span>
-                            <span className="text-accent cursor-pointer hover:underline">48V Series</span>
-                            <span className="text-accent cursor-pointer hover:underline">MSDS</span>
-                            <span className="text-accent cursor-pointer hover:underline">BESS Manual</span>
+                            <span className="text-white cursor-pointer hover:text-accent hover:underline transition-colors tracking-tight">48V Series</span>
+                            <span className="text-white cursor-pointer hover:text-accent hover:underline transition-colors tracking-tight">MSDS</span>
+                            <span className="text-white cursor-pointer hover:text-accent hover:underline transition-colors tracking-tight">BESS Manual</span>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
                                         <span className="text-[10px] font-black font-mono text-zinc-400 p-1 border border-zinc-200 rounded uppercase tracking-tighter">PDF / {res.size}</span>
                                     </div>
                                     <CardTitle className="text-xl font-heading font-bold">{res.title}</CardTitle>
-                                    <p className="text-[10px] text-accent font-black uppercase tracking-widest mt-1">{res.type}</p>
+                                    <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-1 group-hover:text-black transition-colors">{res.type}</p>
                                 </CardHeader>
                                 <CardContent className="p-6 flex-grow">
                                     <p className="text-sm text-muted-foreground leading-relaxed italic border-l-2 border-zinc-200 pl-4">

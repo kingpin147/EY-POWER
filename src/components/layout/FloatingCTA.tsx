@@ -15,7 +15,7 @@ export function FloatingCTA() {
         <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
             {/* WhatsApp Button */}
             <a
-                href="https://wa.me/923000000000" // Replace with actual number
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "923000000000"}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3"

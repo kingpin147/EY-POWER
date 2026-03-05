@@ -25,39 +25,45 @@ export function Footer() {
                 </div>
 
                 <div>
-                    <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-accent mb-6">Solutions</h4>
+                    <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-accent mb-6">Industrial Solutions</h4>
                     <ul className="space-y-4 text-sm text-zinc-400">
-                        <li><Link href="/products" className="hover:text-white transition-colors">Residential Lithium Storage</Link></li>
-                        <li><Link href="/applications" className="hover:text-white transition-colors">Industrial ESS / BESS</Link></li>
-                        <li><Link href="/applications#inquire" className="hover:text-white transition-colors">Custom Solution Engineering</Link></li>
-                        <li><Link href="/technology" className="hover:text-white transition-colors">LiFePO4 Technology</Link></li>
+                        <li><Link href="/products/lithium" className="hover:text-white transition-colors">Residential Lithium Storage</Link></li>
+                        <li><Link href="/solutions/bess" className="hover:text-white transition-colors">Industrial ESS / BESS</Link></li>
+                        <li><Link href="/technology" className="hover:text-white transition-colors">Battery Technology (LiFePO4)</Link></li>
+                        <li><Link href="/solutions/bess#inquire" className="hover:text-white transition-colors">B2B Project Inquiry</Link></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-accent mb-6">Company</h4>
                     <ul className="space-y-4 text-sm text-zinc-400">
-                        <li><Link href="/partners" className="hover:text-white transition-colors">Distribution Network</Link></li>
-                        <li><Link href="/resources" className="hover:text-white transition-colors">Technical Hub & Datasheets</Link></li>
-                        <li><Link href="/partners#dealer-form" className="hover:text-white transition-colors">Become a Distributor</Link></li>
-                        <li><Link href="/contact" className="hover:text-white transition-colors">Support Center</Link></li>
+                        <li><Link href="/distributors" className="hover:text-white transition-colors">Distributor Network</Link></li>
+                        <li><Link href="/resources" className="hover:text-white transition-colors">Technical Datasheets</Link></li>
+                        <li><Link href="/distributors#apply" className="hover:text-white transition-colors">Become a Partner</Link></li>
+                        <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                     </ul>
                 </div>
 
                 <div className="space-y-6">
-                    <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-accent mb-6">Contact</h4>
+                    <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-accent mb-6">Presence & Contact</h4>
                     <div className="space-y-4 text-sm text-zinc-400">
                         <div className="flex items-start gap-3">
                             <MapPin className="w-4 h-4 text-accent translate-y-1" />
-                            <span>Plot 123, Korangi Industrial Area,<br />Sector 15, Karachi, Pakistan</span>
+                            <div className="space-y-1">
+                                <p className="text-white font-bold text-xs uppercase">Head Office</p>
+                                <p>Industrial Area, Karachi</p>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <Phone className="w-4 h-4 text-accent" />
-                            <span>+92 21 3XXX XXXX</span>
+                        <div className="flex items-start gap-3">
+                            <MapPin className="w-4 h-4 text-zinc-600 translate-y-1" />
+                            <div className="text-xs">
+                                <p className="font-bold">Regional Offices</p>
+                                <p>Lahore · Sargodha · Chakwal · Islamabad · Hyderabad</p>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 pt-2">
                             <Mail className="w-4 h-4 text-accent" />
-                            <span>info@eypower.com.pk</span>
+                            <span>{process.env.NOTIFICATION_EMAIL || "pk.eyenterprise@gmail.com"}</span>
                         </div>
                     </div>
                 </div>

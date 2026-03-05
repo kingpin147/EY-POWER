@@ -110,10 +110,10 @@ export default function ProductsPage() {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="p-6 pt-0 flex gap-3">
-                                    <Button className="flex-1 bg-black text-white font-bold hover:bg-zinc-800">
+                                    <Button className="flex-1 bg-zinc-100 text-black font-black hover:bg-zinc-200 border-none uppercase tracking-widest text-[10px]">
                                         View Specs
                                     </Button>
-                                    <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black font-bold">
+                                    <Button className="flex-1 bg-accent text-black font-black hover:bg-yellow-400 border-none uppercase tracking-widest text-[10px]">
                                         Inquire
                                     </Button>
                                 </CardFooter>
