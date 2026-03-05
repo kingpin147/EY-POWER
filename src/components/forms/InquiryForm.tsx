@@ -1,0 +1,96 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { submitInquiry } from "@/lib/actions";
+
+interface InquiryFormProps {
+    type: "general" | "b2b" | "distributor";
+    title?: string;
+    dark?: boolean;
+}
+
+export function InquiryForm({ type, title, dark = false }: InquiryFormProps) {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<{ success?: boolean; error?: string } | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus(null);
+
+        const formData = new FormData(e.currentTarget);
+        formData.set("type", type);
+
+        const result = await submitInquiry(formData);
+
+        if (result.success) {
+            setStatus({ success: true });
+            (e.target as HTMLFormElement).reset();
+        } else {
+            setStatus({ error: typeof result.error === "string" ? result.error : "Validation failed. Please check your inputs." });
+        }
+        setIsSubmitting(false);
+    };
+
+    return (
+        <div className={`p-8 rounded-3xl border ${dark ? "bg-zinc-800 border-zinc-700 text-white" : "bg-white border-zinc-100 shadow-xl shadow-black/5"}`}>
+            <h3 className="text-xl font-heading font-bold text-center mb-6">{title || "Send an Inquiry"}</h3>
+
+            {status?.success && (
+                <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 text-green-500 text-sm rounded-lg text-center">
+                    Thank you! Our engineering team will contact you shortly.
+                </div>
+            )}
+
+            {status?.error && (
+                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-500 text-sm rounded-lg text-center">
+                    {status.error}
+                </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-1.5">
+                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Full Name</Label>
+                    <Input name="name" required placeholder="John Doe" className={dark ? "bg-zinc-900 border-zinc-700 h-12" : "h-12 border-zinc-100"} />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                        <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Email</Label>
+                        <Input name="email" type="email" required placeholder="john@company.com" className={dark ? "bg-zinc-900 border-zinc-700 h-12" : "h-12 border-zinc-100"} />
+                    </div>
+                    <div className="space-y-1.5">
+                        <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Phone</Label>
+                        <Input name="phone" required placeholder="+92 XXX XXXXXXX" className={dark ? "bg-zinc-900 border-zinc-700 h-12" : "h-12 border-zinc-100"} />
+                    </div>
+                </div>
+
+                <div className="space-y-1.5">
+                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Company (Optional)</Label>
+                    <Input name="company" placeholder="EY Power Ltd" className={dark ? "bg-zinc-900 border-zinc-700 h-12" : "h-12 border-zinc-100"} />
+                </div>
+
+                <div className="space-y-1.5">
+                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>How can we help?</Label>
+                    <Textarea name="message" required placeholder="Tell us about your project or requirement..." className={dark ? "bg-zinc-900 border-zinc-700 min-h-[100px]" : "min-h-[100px] border-zinc-100"} />
+                </div>
+
+                <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full h-14 font-black text-lg transition-transform active:scale-95 ${dark ? "bg-accent text-black hover:bg-yellow-400" : "bg-black text-white hover:bg-zinc-800"}`}
+                >
+                    {isSubmitting ? "Sending..." : "Send Inquiry Now"}
+                </Button>
+
+                <p className={`text-[10px] text-center uppercase tracking-tighter ${dark ? "text-zinc-500" : "text-zinc-400"}`}>
+                    Lead will be routed to the {type === "distributor" ? "partnership" : "sales"} engineering desk.
+                </p>
+            </form>
+        </div>
+    );
+}
