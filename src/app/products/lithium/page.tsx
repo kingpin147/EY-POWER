@@ -70,8 +70,14 @@ export default function LithiumPage() {
             </div>
             
             <div className="relative aspect-video bg-zinc-100 rounded-[2rem] overflow-hidden border border-zinc-200">
-               <div className="absolute inset-0 flex items-center justify-center p-12">
-                  <Battery className="w-32 h-32 text-accent opacity-20" />
+               <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <Image 
+                    src="/51.2V100Ah_LiFePO₄ Battery.png" 
+                    alt="EY Power Lithium Battery" 
+                    width={500} 
+                    height={500} 
+                    className="object-contain w-full h-full drop-shadow-2xl"
+                  />
                   <div className="absolute bottom-8 left-8 right-8 bg-white/80 backdrop-blur p-6 rounded-2xl border border-white shadow-xl">
                       <p className="text-xs font-black uppercase tracking-widest text-zinc-400 mb-1">Standard Warranty</p>
                       <h3 className="text-xl font-bold">5-10 Years Comprehensive</h3>

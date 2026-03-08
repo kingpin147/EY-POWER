@@ -1,18 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
 
 export function Footer() {
     return (
-        <footer className="bg-black text-white pt-24 pb-12 border-t border-white/5">
+        <footer className="text-white pt-24 pb-12 border-t border-white/10" style={{ backgroundColor: '#111111' }}>
             <div className="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
                 <div className="space-y-6">
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 bg-accent rounded flex items-center justify-center font-bold text-black text-xl group-hover:scale-105 transition-transform">
-                            EY
-                        </div>
-                        <span className="text-2xl font-heading font-black tracking-tighter group-hover:text-accent transition-colors">
-                            POWER
-                        </span>
+                        <Image 
+                            src="/EY-Power(main) logo.png" 
+                            alt="EY Power Logo" 
+                            width={160} 
+                            height={48} 
+                            className="h-10 w-auto group-hover:scale-105 transition-transform"
+                        />
                     </Link>
                     <p className="text-zinc-500 text-sm leading-relaxed">
                         Engineering-driven Lithium Batteries and Industrial Energy Storage Systems (ESS/BESS) for Pakistan’s clean energy future.

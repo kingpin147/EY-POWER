@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import {
@@ -19,15 +20,16 @@ const navLinks = [
 
 export function Navbar() {
     return (
-        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 text-white">
+        <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 text-white" style={{ backgroundColor: 'rgba(17, 17, 17, 0.9)' }}>
             <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group shrink-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded flex items-center justify-center font-bold text-black text-lg md:text-xl group-hover:scale-105 transition-transform">
-                        EY
-                    </div>
-                    <span className="text-xl md:text-2xl font-heading font-black tracking-tighter group-hover:text-accent transition-colors">
-                        POWER
-                    </span>
+                    <Image 
+                        src="/EY-Power(main) logo.png" 
+                        alt="EY Power Logo" 
+                        width={140} 
+                        height={40} 
+                        className="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -75,8 +77,13 @@ export function Navbar() {
                         <SheetContent side="right" className="bg-black border-white/10 text-white p-0 flex flex-col">
                             <SheetHeader className="p-6 border-b border-white/10">
                                 <SheetTitle className="text-white flex items-center gap-3">
-                                    <div className="w-8 h-8 bg-accent rounded flex items-center justify-center font-bold text-black">EY</div>
-                                    <span className="font-black tracking-tighter">POWER</span>
+                                    <Image 
+                                        src="/EY-Power(main) logo.png" 
+                                        alt="EY Power Logo" 
+                                        width={120} 
+                                        height={36} 
+                                        className="h-8 w-auto"
+                                    />
                                 </SheetTitle>
                             </SheetHeader>
                             <div className="flex flex-col gap-1 p-4 flex-grow">

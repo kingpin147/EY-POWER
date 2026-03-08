@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Lithium Battery Catalog | 12V, 24V, 48V LFP | EY Power",
@@ -13,6 +15,7 @@ const products = [
         id: "ey-12-100",
         name: "EY-12-100 Lithium",
         series: "12V Standard Series",
+        link: "/products/lithium",
         specs: {
             voltage: "12.8V",
             capacity: "100Ah",
@@ -25,6 +28,8 @@ const products = [
         id: "ey-24-100",
         name: "EY-24-100 Pro",
         series: "24V Power Series",
+        image: "/25.6V100AH_LiFePO₄ Battery.png",
+        link: "/products/lithium",
         specs: {
             voltage: "25.6V",
             capacity: "100Ah",
@@ -37,6 +42,8 @@ const products = [
         id: "ey-48-100",
         name: "EY-48-100 Max",
         series: "48V Rackmount Series",
+        image: "/51.2V100Ah_LiFePO₄ Battery.png",
+        link: "/products/lithium",
         specs: {
             voltage: "51.2V",
             capacity: "100Ah",
@@ -49,6 +56,8 @@ const products = [
         id: "ey-48-200",
         name: "EY-48-200 Ultra",
         series: "48V High Capacity",
+        image: "/51.2V280Ah LiFePO₄ Battery.png",
+        link: "/products/lithium",
         specs: {
             voltage: "51.2V",
             capacity: "200Ah",
@@ -88,11 +97,20 @@ export default function ProductsPage() {
                                     <div className="absolute top-4 left-4 bg-black text-white px-2 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">
                                         {product.series}
                                     </div>
-                                    {/* Placeholder for Product Image */}
-                                    <div className="w-32 h-40 bg-zinc-200 border-x-4 border-t-4 border-zinc-300 rounded-lg relative flex flex-col items-center justify-center">
-                                        <div className="absolute top-2 w-16 h-1 bg-accent/30 rounded" />
-                                        <div className="text-[10px] font-mono font-bold text-zinc-400">EY POWER</div>
-                                    </div>
+                                    {product.image ? (
+                                        <Image 
+                                            src={product.image} 
+                                            alt={product.name} 
+                                            width={300} 
+                                            height={300} 
+                                            className="object-contain w-full h-full p-8 group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        <div className="w-32 h-40 bg-zinc-200 border-x-4 border-t-4 border-zinc-300 rounded-lg relative flex flex-col items-center justify-center">
+                                            <div className="absolute top-2 w-16 h-1 bg-accent/30 rounded" />
+                                            <div className="text-[10px] font-mono font-bold text-zinc-400">EY POWER</div>
+                                        </div>
+                                    )}
                                 </CardHeader>
                                 <CardContent className="p-6 space-y-4">
                                     <div>
@@ -110,12 +128,21 @@ export default function ProductsPage() {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="p-6 pt-0 flex gap-3">
-                                    <Button className="flex-1 bg-zinc-100 text-black font-black hover:bg-zinc-200 border-none uppercase tracking-widest text-[10px]">
-                                        View Specs
-                                    </Button>
-                                    <Button className="flex-1 bg-accent text-black font-black hover:bg-yellow-400 border-none uppercase tracking-widest text-[10px]">
-                                        Inquire
-                                    </Button>
+                                    <Link href={product.link || "/products/lithium"} className="flex-1">
+                                        <Button className="w-full bg-zinc-900 text-white font-black hover:bg-black border-none uppercase tracking-widest text-[10px]">
+                                            View Product
+                                        </Button>
+                                    </Link>
+                                    <Link 
+                                        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20share%20more%20details.`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1"
+                                    >
+                                        <Button className="w-full bg-accent text-black font-black hover:bg-yellow-400 border-none uppercase tracking-widest text-[10px]">
+                                            Inquire
+                                        </Button>
+                                    </Link>
                                 </CardFooter>
                             </Card>
                         ))}
