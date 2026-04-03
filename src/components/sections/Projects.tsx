@@ -11,11 +11,11 @@ const projects = [
         description: "Multi-rack industrial storage system for a large textile facility."
     },
     {
-        title: "100kWh Telecom Backup",
+        title: "100kWh Commercial Backup",
         location: "Islamabad Highway",
         type: "Critical Power",
-        image: "/project-telecom.jpg", // Placeholder
-        description: "High-uptime energy storage for 5G telecommunication hubs."
+        image: "/project-commercial.jpg", // Placeholder
+        description: "High-uptime energy storage for commercial plazas and offices."
     },
     {
         title: "Solar-Hybrid C&I",
@@ -42,17 +42,17 @@ export function Projects() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
                     {projects.map((project, i) => (
-                        <div key={i} className="group relative bg-zinc-50 rounded-3xl overflow-hidden border border-zinc-100 hover:border-accent/30 transition-all p-6 space-y-6">
-                            <div className="aspect-[4/3] bg-zinc-200 rounded-2xl overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        <div key={i} className="group relative bg-white rounded-3xl overflow-hidden border border-zinc-200 hover:border-[#FFCC00] transition-all p-6 space-y-6 shadow-sm">
+                            <div className="aspect-[4/3] bg-zinc-100 rounded-2xl overflow-hidden relative">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                                 {/* This would be an Image component with actual project photos */}
                                 <div className="absolute inset-0 flex items-center justify-center text-zinc-400 font-mono text-xs uppercase tracking-widest">Project Visual</div>
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[10px] uppercase font-black tracking-widest text-accent bg-black px-2 py-0.5 rounded">
+                                    <span className="text-[10px] uppercase font-black tracking-widest text-black bg-[#FFCC00] px-2 py-0.5 rounded">
                                         {project.type}
                                     </span>
                                     <span className="text-[10px] uppercase font-bold text-muted-foreground">{project.location}</span>

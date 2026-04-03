@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Segments } from "@/components/sections/Segments";
 import { Projects } from "@/components/sections/Projects";
+import { Reviews } from "@/components/sections/Reviews";
 import { Footer } from "@/components/layout/Footer";
 import Script from "next/script";
 
@@ -74,6 +75,9 @@ export default function Home() {
 
       {/* Industrial Projects / Engineering Credibility */}
       <Projects />
+
+      {/* Social Proof Section */}
+      <Reviews />
 
       <Footer />
     </main>

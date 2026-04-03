@@ -15,28 +15,28 @@ import Link from "next/link";
 
 const products = [
   {
+    id: "ey-2-5kwh",
+    name: "EY Power 2.56kWh",
+    type: "Compact Series",
+    specs: "100Ah | 25.6V | LiFePO4",
+    features: ["6000+ Cycles", "Smart BMS", "RS485/CAN Support"],
+    description: "Perfect for smaller setups and reliable backup power."
+  },
+  {
     id: "ey-5kwh",
     name: "EY Power 5.12kWh",
     type: "Wall-Mounted / Stackable",
     specs: "100Ah | 51.2V | LiFePO4",
-    features: ["6000+ Cycles", "Smart BMS", "RS485/CAN Support"],
+    features: ["Max Efficiency", "Expandable", "LCD Display"],
     description: "The ideal choice for modern households. Compact, safe, and designed for 10+ years of maintenance-free service."
   },
   {
-    id: "ey-10kwh",
-    name: "EY Power 10.24kWh",
-    type: "High Capacity Residential",
-    specs: "200Ah | 51.2V | LiFePO4",
-    features: ["Max Efficiency", "Expandable", "LCD Display"],
-    description: "Power your entire home including AC units comfortably. Engineered for heavy-duty residential loads."
-  },
-  {
-    id: "ey-server",
-    name: "Server Rack Series",
-    type: "Enterprise / Modular",
-    specs: "100Ah/200Ah Modules",
+    id: "ey-14kwh",
+    name: "EY Power 14.33kWh",
+    type: "High Capacity Industrial",
+    specs: "280Ah | 51.2V | LiFePO4",
     features: ["Standard Rack Design", "Parallel up to 15 Units", "Industrial Grade"],
-    description: "Designed for commercial racks and telecom applications. Modular scalability at its finest."
+    description: "Designed for commercial applications and maximum uptime. Industrial modular scalability at its finest."
   }
 ];
 
@@ -59,12 +59,9 @@ export default function LithiumPage() {
                 Uncompromising safety and longevity for your home and business. 
                 Our Tier-1 LiFePO4 cells ensure 15+ years of design life with zero maintenance.
               </p>
-              <div className="flex gap-4">
-                <Link href="#products">
-                  <Button size="lg" className="bg-black text-white hover:bg-zinc-800 font-bold px-8">View Inventory</Button>
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}>
-                  <Button size="lg" variant="outline" className="border-black font-bold px-8">Check Retail Price</Button>
+                  <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 font-bold px-8 w-full sm:w-auto h-14 uppercase tracking-widest">Check Retail Price</Button>
                 </Link>
               </div>
             </div>
@@ -119,8 +116,8 @@ export default function LithiumPage() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-zinc-50">
-                   <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Inquiry about ${product.name}`} className="block">
-                      <Button className="w-full bg-zinc-900 text-white hover:bg-black rounded-xl h-12 font-bold group">
+                   <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="block">
+                      <Button className="w-full bg-zinc-900 text-white hover:bg-[#FFCC00] hover:text-black rounded-xl h-12 font-bold group">
                         Inquire Now <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                    </Link>
@@ -132,51 +129,49 @@ export default function LithiumPage() {
       </section>
 
       {/* Retail Tech Section */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-white border-t border-zinc-200 text-black">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
              <div className="space-y-6">
                 <h2 className="text-3xl md:text-5xl font-heading font-black uppercase tracking-tight leading-tight">
                   Why Install <span className="text-accent">EY Power</span> at Home?
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-6 pt-4">
                    <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-accent text-black rounded-lg flex items-center justify-center shrink-0"><Zap className="w-5 h-5"/></div>
+                      <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center shrink-0"><Zap className="w-6 h-6"/></div>
                       <div>
-                        <h4 className="font-bold uppercase tracking-tight mb-1">High Discharge Rate</h4>
-                        <p className="text-sm text-zinc-400">Handle high-surge appliances like ACs and motors without voltage drops.</p>
+                        <h4 className="font-bold uppercase tracking-tight text-lg mb-1">High Discharge Rate</h4>
+                        <p className="text-sm text-zinc-600 leading-relaxed">Handle high-surge appliances like ACs and motors without voltage drops.</p>
                       </div>
                    </div>
                    <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-accent text-black rounded-lg flex items-center justify-center shrink-0"><ShieldCheck className="w-5 h-5"/></div>
+                      <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center shrink-0"><ShieldCheck className="w-6 h-6"/></div>
                       <div>
-                        <h4 className="font-bold uppercase tracking-tight mb-1">Non-Combustible Chemistry</h4>
-                        <p className="text-sm text-zinc-400">LiFePO4 stays stable even under extreme heat, ensuring family safety.</p>
+                        <h4 className="font-bold uppercase tracking-tight text-lg mb-1">Non-Combustible Chemistry</h4>
+                        <p className="text-sm text-zinc-600 leading-relaxed">LiFePO4 stays stable even under extreme heat, ensuring family safety.</p>
                       </div>
                    </div>
                    <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-accent text-black rounded-lg flex items-center justify-center shrink-0"><Home className="w-5 h-5"/></div>
+                      <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center shrink-0"><Home className="w-6 h-6"/></div>
                       <div>
-                        <h4 className="font-bold uppercase tracking-tight mb-1">Elegant Design</h4>
-                        <p className="text-sm text-zinc-400">Sleek, wall-mounted units that complement your modern home interior.</p>
+                        <h4 className="font-bold uppercase tracking-tight text-lg mb-1">Elegant Design</h4>
+                        <p className="text-sm text-zinc-600 leading-relaxed">Sleek, wall-mounted units that complement your modern home interior.</p>
                       </div>
                    </div>
                 </div>
              </div>
              
-             <div className="bg-zinc-900 rounded-[3rem] p-12 border border-zinc-800 relative overflow-hidden">
+             <div className="bg-zinc-50 rounded-[3rem] p-12 border border-zinc-200 relative overflow-hidden shadow-sm">
                 <div className="space-y-4 relative z-10 text-center">
-                   <Lightbulb className="w-12 h-12 text-accent mx-auto mb-4" />
-                   <h3 className="text-2xl font-bold uppercase tracking-tight">Become a Retailer?</h3>
-                   <p className="text-zinc-400">Join our nationwide distribution network and start offering Pakistan's premium lithium solution to your customers.</p>
-                   <div className="pt-6">
+                   <Lightbulb className="w-14 h-14 text-accent mx-auto mb-6 drop-shadow-sm" />
+                   <h3 className="text-3xl font-heading font-black uppercase tracking-tight">Become a Retailer?</h3>
+                   <p className="text-zinc-600 font-medium">Join our nationwide distribution network and start offering Pakistan's premium lithium solution to your customers.</p>
+                   <div className="pt-8">
                      <Link href="/distributors">
-                        <Button className="bg-accent text-black hover:bg-yellow-400 rounded-full font-black px-10">Apply to Join</Button>
+                        <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 rounded-full font-black px-12 h-14 text-lg border-2 border-[#FFCC00]">Apply to Join</Button>
                      </Link>
                    </div>
                 </div>
-                {/* Decorative glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 blur-[100px] rounded-full pointer-events-none" />
              </div>
           </div>
         </div>

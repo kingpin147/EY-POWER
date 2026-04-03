@@ -12,7 +12,7 @@ export function FloatingCTA() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
             {/* WhatsApp Button */}
             <a
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "923000000000"}`}

@@ -12,56 +12,43 @@ export const metadata: Metadata = {
 
 const products = [
     {
-        id: "ey-12-100",
-        name: "EY-12-100 Lithium",
-        series: "12V Standard Series",
-        link: "/products/lithium",
-        specs: {
-            voltage: "12.8V",
-            capacity: "100Ah",
-            energy: "1280Wh",
-            cycle: "6000+ @ 80% DoD"
-        },
-        category: "Residential / Small UPS"
-    },
-    {
-        id: "ey-24-100",
-        name: "EY-24-100 Pro",
+        id: "ey-2-5kwh",
+        name: "EY Power 2.56kWh",
         series: "24V Power Series",
         image: "/25.6V100AH_LiFePO₄ Battery.png",
         link: "/products/lithium",
         specs: {
             voltage: "25.6V",
             capacity: "100Ah",
-            energy: "2560Wh",
+            energy: "2.56kWh",
             cycle: "6000+ @ 80% DoD"
         },
-        category: "Solar / Telecom"
+        category: "Residential / Small UPS"
     },
     {
-        id: "ey-48-100",
-        name: "EY-48-100 Max",
-        series: "48V Rackmount Series",
+        id: "ey-5-12kwh",
+        name: "EY Power 5.12kWh",
+        series: "48V Standard Series",
         image: "/51.2V100Ah_LiFePO₄ Battery.png",
         link: "/products/lithium",
         specs: {
             voltage: "51.2V",
             capacity: "100Ah",
-            energy: "5120Wh",
+            energy: "5.12kWh",
             cycle: "6000+ @ 80% DoD"
         },
-        category: "C&I Storage / Server Room"
+        category: "Solar / Commercial"
     },
     {
-        id: "ey-48-200",
-        name: "EY-48-200 Ultra",
+        id: "ey-14-33kwh",
+        name: "EY Power 14.33kWh",
         series: "48V High Capacity",
         image: "/51.2V280Ah LiFePO₄ Battery.png",
         link: "/products/lithium",
         specs: {
             voltage: "51.2V",
-            capacity: "200Ah",
-            energy: "10.24kWh",
+            capacity: "280Ah",
+            energy: "14.33kWh",
             cycle: "6000+ @ 80% DoD"
         },
         category: "Industrial Power"
@@ -134,12 +121,10 @@ export default function ProductsPage() {
                                         </Button>
                                     </Link>
                                     <Link 
-                                        href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20share%20more%20details.`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href={`/contact?product=${encodeURIComponent(product.name)}`}
                                         className="flex-1"
                                     >
-                                        <Button className="w-full bg-accent text-black font-black hover:bg-yellow-400 border-none uppercase tracking-widest text-[10px]">
+                                        <Button className="w-full bg-[#FFCC00] text-black font-black hover:bg-yellow-500 border-none uppercase tracking-widest text-[10px]">
                                             Inquire
                                         </Button>
                                     </Link>
