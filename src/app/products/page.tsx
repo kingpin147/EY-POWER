@@ -85,7 +85,7 @@ export default function ProductsPage() {
                         {products.map((product) => (
                             <Card key={product.id} className="border border-zinc-100 shadow-sm hover:shadow-xl hover:border-accent transition-all group">
                                 <CardHeader className="p-0 overflow-hidden aspect-[4/3] bg-white flex items-center justify-center relative">
-                                    <div className="absolute top-4 left-4 bg-[#FFCC00] text-black px-2 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                                    <div className="absolute top-4 left-4 z-10 bg-[#FFCC00] text-black px-2 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">
                                         {product.series}
                                     </div>
                                     {product.image ? (
