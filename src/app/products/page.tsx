@@ -1,14 +1,11 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-    title: "Lithium Battery Catalog | 12V, 24V, 48V LFP | EY Power",
-    description: "Browse our range of high-performance LiLifePO4 batteries for residential and industrial use in Pakistan. Technical specs for all models.",
-};
 
 const products = [
     {
@@ -56,6 +53,13 @@ const products = [
 ];
 
 export default function ProductsPage() {
+    const handleInquire = (productName: string) => {
+        const event = new CustomEvent("open-whatsapp-gateway", {
+            detail: { productName }
+        });
+        window.dispatchEvent(event);
+    };
+
     return (
         <main className="min-h-screen flex flex-col pt-20">
             <Navbar />
@@ -80,8 +84,8 @@ export default function ProductsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {products.map((product) => (
                             <Card key={product.id} className="border border-zinc-100 shadow-sm hover:shadow-xl hover:border-accent transition-all group">
-                                <CardHeader className="p-0 overflow-hidden aspect-[4/3] bg-zinc-100 flex items-center justify-center relative">
-                                    <div className="absolute top-4 left-4 bg-black text-white px-2 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">
+                                <CardHeader className="p-0 overflow-hidden aspect-[4/3] bg-white flex items-center justify-center relative">
+                                    <div className="absolute top-4 left-4 bg-[#FFCC00] text-black px-2 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm">
                                         {product.series}
                                     </div>
                                     {product.image ? (
@@ -116,18 +120,18 @@ export default function ProductsPage() {
                                 </CardContent>
                                 <CardFooter className="p-6 pt-0 flex gap-3">
                                     <Link href={product.link || "/products/lithium"} className="flex-1">
-                                        <Button className="w-full bg-zinc-900 text-white font-black hover:bg-black border-none uppercase tracking-widest text-[10px]">
+                                        <Button className="w-full bg-white text-black font-black hover:bg-zinc-50 border border-zinc-200 uppercase tracking-widest text-[10px]">
                                             View Product
                                         </Button>
                                     </Link>
-                                    <Link 
-                                        href={`/contact?product=${encodeURIComponent(product.name)}`}
-                                        className="flex-1"
-                                    >
-                                        <Button className="w-full bg-[#FFCC00] text-black font-black hover:bg-yellow-500 border-none uppercase tracking-widest text-[10px]">
+                                    <div className="flex-1">
+                                        <Button 
+                                            onClick={() => handleInquire(product.name)}
+                                            className="w-full bg-[#FFCC00] text-black font-black hover:bg-yellow-500 border-none uppercase tracking-widest text-[10px]"
+                                        >
                                             Inquire
                                         </Button>
-                                    </Link>
+                                    </div>
                                 </CardFooter>
                             </Card>
                         ))}
@@ -136,7 +140,7 @@ export default function ProductsPage() {
             </section>
 
             {/* Industrial Quote CTA */}
-            <section className="py-20 bg-accent text-black overflow-hidden relative">
+            <section className="py-20 bg-[#FFCC00] text-black overflow-hidden relative">
                 <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                     <div className="max-w-2xl space-y-4">
                         <h2 className="text-3xl font-heading font-black leading-tight uppercase">Custom Battery Packs & Large Scale BESS?</h2>
@@ -144,18 +148,16 @@ export default function ProductsPage() {
                             We specialize in custom engineering for MW-scale projects. Speak with our technical team today.
                         </p>
                     </div>
-                    <Button size="lg" className="bg-black text-white hover:bg-zinc-900 font-bold px-12 h-14">
-                        Get Industrial Quote
-                    </Button>
+                    <Link href="/solutions/bess#inquire">
+                        <Button size="lg" className="bg-white text-black hover:bg-zinc-50 font-bold px-12 h-14 shadow-md">
+                            Get Industrial Quote
+                        </Button>
+                    </Link>
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="mt-auto py-12 bg-black border-t border-white/10 text-white/40 text-sm">
-                <div className="container mx-auto px-6 text-center">
-                    &copy; {new Date().getFullYear()} EY POWER. Engineering Tomorrow, Scaling Today.
-                </div>
-            </footer>
+            <Footer />
         </main>
     );
 }

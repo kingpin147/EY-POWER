@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { Metadata } from "next";
@@ -53,14 +54,14 @@ export default function PartnersPage() {
             <Navbar />
 
             {/* Partners Hero */}
-            <section className="py-24 bg-black text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10 bg-[url('/world-map.png')] bg-center bg-no-repeat bg-contain" />
+            <section className="py-24 bg-white border-b border-zinc-200 text-black relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[url('/world-map.png')] bg-center bg-no-repeat bg-contain filter invert" />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-3xl space-y-6">
-                        <h1 className="text-4xl lg:text-7xl font-heading font-black tracking-tight underline decoration-accent/30 underline-offset-8">
-                            DISTRIBUTOR <span className="text-accent">NETWORK</span>
+                        <h1 className="text-4xl lg:text-7xl font-heading font-black tracking-tight underline decoration-[#FFCC00]/50 underline-offset-8">
+                            DISTRIBUTOR <span className="bg-[#FFCC00] px-1 text-black">NETWORK</span>
                         </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-xl text-zinc-600 font-medium leading-relaxed">
                             Serving industrial Pakistan across 6 regional offices and multiple authorized partners. Engineering support when and where you need it.
                         </p>
                     </div>
@@ -72,9 +73,9 @@ export default function PartnersPage() {
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {offices.map((office, i) => (
-                            <Card key={i} className="border border-zinc-100 shadow-sm hover:border-accent transition-all group">
-                                <CardHeader className="bg-zinc-50 border-b border-zinc-100 p-6 group-hover:bg-accent/10 transition-colors">
-                                    <div className="w-10 h-10 bg-black text-accent rounded flex items-center justify-center font-bold mb-4 group-hover:bg-accent group-hover:text-black transition-colors">
+                            <Card key={i} className="border border-zinc-200 shadow-sm hover:border-[#FFCC00] transition-all group">
+                                <CardHeader className="bg-white border-b border-zinc-100 p-6 group-hover:bg-[#FFCC00]/5 transition-colors">
+                                    <div className="w-10 h-10 bg-[#FFCC00] text-black rounded flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
                                         0{i + 1}
                                     </div>
                                     <CardTitle className="text-2xl font-heading font-bold">{office.city}</CardTitle>
@@ -100,40 +101,35 @@ export default function PartnersPage() {
             </section>
 
             {/* Join as Partner CTA */}
-            <section className="py-24 bg-zinc-900 text-white">
+            <section className="py-24 bg-zinc-50 text-black border-t border-zinc-200">
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-3xl lg:text-5xl font-heading font-black">BECOME AN AUTHORIZED <span className="text-accent">EY POWER</span> PARTNER</h2>
-                        <p className="text-lg text-zinc-400 leading-relaxed">
+                        <h2 className="text-3xl lg:text-5xl font-heading font-black">BECOME AN AUTHORIZED <span className="bg-[#FFCC00] px-1 text-black">EY POWER</span> PARTNER</h2>
+                        <p className="text-lg text-zinc-600 font-medium leading-relaxed">
                             We are expanding our retail and industrial network across Pakistan. Join the most advanced lithium energy movement in the country.
                         </p>
                         <div className="space-y-4 pt-4 text-sm font-bold opacity-80">
                             <div className="flex items-center gap-3">
-                                <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
+                                <div className="w-5 h-5 bg-[#FFCC00] rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
                                 <span>Access to Dealer Price Lists & Bulk Logistics</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
+                                <div className="w-5 h-5 bg-[#FFCC00] rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
                                 <span>In-person Engineering & Sales Training</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
+                                <div className="w-5 h-5 bg-[#FFCC00] rounded-full flex items-center justify-center text-black text-[10px]">✓</div>
                                 <span>Nationwide Marketing & Lead Referrals</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <InquiryForm type="distributor" title="Partner Application" dark />
+                        <InquiryForm type="distributor" title="Partner Application" />
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="mt-auto py-12 bg-black border-t border-white/10 text-white/40 text-sm">
-                <div className="container mx-auto px-6 text-center">
-                    &copy; {new Date().getFullYear()} EY POWER. Engineering Tomorrow, Scaling Today.
-                </div>
-            </footer>
+            <Footer />
         </main>
     );
 }

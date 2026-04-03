@@ -55,17 +55,17 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 pt-8 md:pt-12">
             <div className="p-6 md:p-10 border border-zinc-100 bg-zinc-50/50 rounded-3xl text-left space-y-4 md:space-y-5 hover:border-accent transition-all group">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-black text-accent rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:bg-accent group-hover:text-black transition-colors">01</div>
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:scale-110 transition-transform">01</div>
               <h3 className="text-xl md:text-2xl font-heading font-bold uppercase tracking-tight">In-House Design</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">Proprietary architecture and components designed for the unique Pakistani climate and grid conditions.</p>
             </div>
             <div className="p-6 md:p-10 border border-zinc-100 bg-zinc-50/50 rounded-3xl text-left space-y-4 md:space-y-5 hover:border-accent transition-all group">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-black text-accent rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:bg-accent group-hover:text-black transition-colors">02</div>
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:scale-110 transition-transform">02</div>
               <h3 className="text-xl md:text-2xl font-heading font-bold uppercase tracking-tight">Tier 1 Reliability</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">Utilization of premium LiFePO4 chemistry and rigorous stress testing protocols for 6000+ cycle lifespan.</p>
             </div>
             <div className="p-6 md:p-10 border border-zinc-100 bg-zinc-50/50 rounded-3xl text-left space-y-4 md:space-y-5 hover:border-accent transition-all group">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-black text-accent rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:bg-accent group-hover:text-black transition-colors">03</div>
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center font-black text-xl md:text-2xl group-hover:scale-110 transition-transform">03</div>
               <h3 className="text-xl md:text-2xl font-heading font-bold uppercase tracking-tight">Nationwide Hubs</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">Strategically located regional offices in 6 cities ensuring 24/7 industrial and commercial uptime.</p>
             </div>

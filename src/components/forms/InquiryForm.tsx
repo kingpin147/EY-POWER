@@ -37,7 +37,7 @@ export function InquiryForm({ type, title, dark = false }: InquiryFormProps) {
     };
 
     return (
-        <div className={`p-5 md:p-8 rounded-2xl md:rounded-3xl border ${dark ? "bg-zinc-800 border-zinc-700 text-white" : "bg-white border-zinc-100 shadow-xl shadow-black/5"}`}>
+        <div className="p-5 md:p-8 rounded-2xl md:rounded-3xl border bg-white border-zinc-200 shadow-xl shadow-black/5">
             <h3 className="text-lg md:text-xl font-heading font-bold text-center mb-6">{title || "Send an Inquiry"}</h3>
 
             {status?.success && (
@@ -54,40 +54,40 @@ export function InquiryForm({ type, title, dark = false }: InquiryFormProps) {
 
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-1.5">
-                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Full Name</Label>
-                    <Input name="name" required placeholder="John Doe" className={dark ? "bg-zinc-900 border-zinc-700 h-11 md:h-12" : "h-11 md:h-12 border-zinc-100"} />
+                    <Label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Full Name</Label>
+                    <Input name="name" required placeholder="John Doe" className="h-11 md:h-12 border-zinc-200 bg-white text-black" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                        <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Email</Label>
-                        <Input name="email" type="email" required placeholder="john@company.com" className={dark ? "bg-zinc-900 border-zinc-700 h-11 md:h-12" : "h-11 md:h-12 border-zinc-100"} />
+                        <Label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Email</Label>
+                        <Input name="email" type="email" required placeholder="john@company.com" className="h-11 md:h-12 border-zinc-200 bg-white text-black" />
                     </div>
                     <div className="space-y-1.5">
-                        <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Phone</Label>
-                        <Input name="phone" required placeholder="+92 XXX XXXXXXX" className={dark ? "bg-zinc-900 border-zinc-700 h-11 md:h-12" : "h-11 md:h-12 border-zinc-100"} />
+                        <Label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Phone</Label>
+                        <Input name="phone" required placeholder="+92 XXX XXXXXXX" className="h-11 md:h-12 border-zinc-200 bg-white text-black" />
                     </div>
                 </div>
 
                 <div className="space-y-1.5">
-                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>Company (Optional)</Label>
-                    <Input name="company" placeholder="EY Power Ltd" className={dark ? "bg-zinc-900 border-zinc-700 h-11 md:h-12" : "h-11 md:h-12 border-zinc-100"} />
+                    <Label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">Company (Optional)</Label>
+                    <Input name="company" placeholder="EY Power Ltd" className="h-11 md:h-12 border-zinc-200 bg-white text-black" />
                 </div>
 
                 <div className="space-y-1.5">
-                    <Label className={`text-[10px] font-bold uppercase tracking-widest ${dark ? "text-zinc-500" : "text-zinc-400"}`}>How can we help?</Label>
-                    <Textarea name="message" required placeholder="Tell us about your project or requirement..." className={dark ? "bg-zinc-900 border-zinc-700 min-h-[100px]" : "min-h-[100px] border-zinc-100"} />
+                    <Label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">How can we help?</Label>
+                    <Textarea name="message" required placeholder="Tell us about your project or requirement..." className="min-h-[100px] border-zinc-200 bg-white text-black" />
                 </div>
 
                 <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full h-12 md:h-14 font-black text-base md:text-lg transition-transform active:scale-95 ${dark ? "bg-accent text-black hover:bg-yellow-400" : "bg-black text-white hover:bg-zinc-800"}`}
+                    className="w-full h-12 md:h-14 font-black text-base md:text-lg transition-transform active:scale-95 bg-[#FFCC00] text-black hover:bg-yellow-500 border border-[#FFCC00]"
                 >
                     {isSubmitting ? "Sending..." : "Send Inquiry Now"}
                 </Button>
 
-                <p className={`text-[9px] md:text-[10px] text-center uppercase tracking-tighter ${dark ? "text-zinc-500" : "text-zinc-400"}`}>
+                <p className="text-[9px] md:text-[10px] text-center uppercase tracking-tighter text-zinc-500">
                     Lead will be routed to the {type === "distributor" ? "partnership" : "sales"} engineering desk.
                 </p>
             </form>

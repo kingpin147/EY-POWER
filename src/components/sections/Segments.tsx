@@ -23,7 +23,7 @@ export function Segments() {
                         </div>
                         <div className="relative z-10">
                             <Link href="/products">
-                                <Button size="lg" className="bg-black text-white hover:bg-zinc-800 rounded-full px-6 md:px-8 group h-12">
+                                <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 rounded-full px-6 md:px-8 group h-12 font-bold">
                                     View Products <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </Link>
@@ -33,23 +33,23 @@ export function Segments() {
                     </div>
 
                     {/* B2B - Industrial */}
-                    <div className="relative group overflow-hidden rounded-3xl bg-black text-white p-6 md:p-10 flex flex-col justify-between min-h-[350px] md:h-[400px]">
+                    <div className="relative group overflow-hidden rounded-3xl bg-white border border-zinc-200 shadow-sm hover:shadow-xl hover:border-[#FFCC00] transition-all p-6 md:p-10 flex flex-col justify-between min-h-[350px] md:h-[400px]">
                         <div className="space-y-4 md:space-y-6 relative z-10">
-                            <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-2xl flex items-center justify-center text-black">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-2xl flex items-center justify-center text-[#FFCC00]">
                                 <Factory className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-heading font-black uppercase tracking-tight">Industrial & B2B</h3>
-                            <p className="text-zinc-400 text-sm md:text-base max-w-sm">MW-scale ESS/BESS solutions, peak shaving, and load management for C&I clients, utility providers, and EPC contractors.</p>
+                            <h3 className="text-2xl md:text-3xl font-heading font-black uppercase tracking-tight text-black">Industrial & B2B</h3>
+                            <p className="text-zinc-600 text-sm md:text-base max-w-sm">MW-scale ESS/BESS solutions, peak shaving, and load management for C&I clients, utility providers, and EPC contractors.</p>
                         </div>
                         <div className="relative z-10">
                             <Link href="/applications">
-                                <Button size="lg" className="bg-accent text-black hover:bg-yellow-400 rounded-full px-6 md:px-8 group h-12">
+                                <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 rounded-full px-6 md:px-8 group h-12 font-bold">
                                     Industrial Solutions <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </Link>
                         </div>
                         {/* Subtle background element */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800 rounded-full -mr-20 -mt-20 blur-3xl" />
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFCC00]/10 rounded-full -mr-20 -mt-20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                 </div>
             </div>

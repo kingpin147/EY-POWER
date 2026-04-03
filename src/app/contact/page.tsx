@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +24,13 @@ const offices = [
 ];
 
 export default function ContactPage() {
+  const handleWhatsAppGateway = () => {
+    const event = new CustomEvent("open-whatsapp-gateway", {
+      detail: { productName: "General Inquiry" }
+    });
+    window.dispatchEvent(event);
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -30,10 +39,10 @@ export default function ContactPage() {
       <section className="pt-32 pb-12">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl space-y-6">
-            <Badge className="bg-accent text-black uppercase tracking-widest px-4 py-1">Contact Us</Badge>
-            <h1 className="text-4xl md:text-7xl font-heading font-black tracking-tighter uppercase leading-[0.9]">
+            <Badge className="bg-[#FFCC00] text-black uppercase tracking-widest px-4 py-1 hover:bg-yellow-500">Contact Us</Badge>
+            <h1 className="text-4xl md:text-7xl font-heading font-black tracking-tighter uppercase leading-[0.9] text-black">
               Let's Power <br />
-              <span className="text-accent">Your Next Project</span>
+              <span className="text-[#000000] underline decoration-[#FFCC00]/60 underline-offset-8">Your Next Project</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Have a technical question or need a project quote? Our engineering team is ready to assist you.
@@ -86,15 +95,18 @@ export default function ContactPage() {
                 </div>
                 
                 {/* WhatsApp Direct */}
-                <div className="p-8 bg-black text-white rounded-[3rem] border border-zinc-800 space-y-6 relative overflow-hidden group">
+                <div className="p-8 bg-white text-black rounded-[3rem] border border-zinc-200 shadow-sm space-y-6 relative overflow-hidden group hover:border-[#FFCC00] transition-colors">
                    <div className="relative z-10 space-y-4">
                       <h4 className="text-2xl font-black font-heading uppercase tracking-tight">Prefer WhatsApp?</h4>
-                      <p className="text-zinc-400 text-sm">Instant support for distributors and installers.</p>
-                      <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} className="inline-block">
-                        <Button className="bg-accent text-black hover:bg-yellow-400 rounded-full px-8 font-black">Open WhatsApp Chat</Button>
-                      </Link>
+                      <p className="text-zinc-600 text-sm">Instant support for distributors and installers.</p>
+                      <Button 
+                        onClick={handleWhatsAppGateway}
+                        className="bg-[#FFCC00] text-black hover:bg-yellow-500 rounded-full px-8 font-black"
+                      >
+                        Open WhatsApp Chat
+                      </Button>
                    </div>
-                   <div className="absolute top-1/2 right-12 -translate-y-1/2 opacity-10 group-hover:scale-110 transition-transform">
+                   <div className="absolute top-1/2 right-12 -translate-y-1/2 opacity-5 group-hover:scale-110 transition-transform text-[#FFCC00]">
                       <LayoutGrid className="w-48 h-48" />
                    </div>
                 </div>

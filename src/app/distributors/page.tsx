@@ -27,15 +27,15 @@ export default function DistributorPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-zinc-950 text-white relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-white border-b border-zinc-200 text-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="accent" className="uppercase tracking-widest px-4 py-1">Partnership</Badge>
+            <Badge className="bg-[#FFCC00] text-black hover:bg-yellow-500 uppercase tracking-widest px-4 py-1 font-bold">Partnership</Badge>
             <h1 className="text-4xl md:text-7xl font-heading font-black tracking-tighter uppercase leading-[0.9]">
               Grow Your Business <br />
-              <span className="text-accent">With EY Power</span>
+              <span className="text-[#000000] underline decoration-[#FFCC00]/50 underline-offset-8">With EY Power</span>
             </h1>
-            <p className="text-xl text-zinc-400 leading-relaxed">
+            <p className="text-xl text-zinc-600 leading-relaxed font-medium">
               Join Pakistan's fastest-growing network of energy professionals. We are looking for
               distributors and certified installers nationwide.
             </p>
@@ -56,9 +56,9 @@ export default function DistributorPage() {
               <div className="grid sm:grid-cols-2 gap-6">
                 {benefits.map((benefit, i) => (
                   <div key={i} className="flex gap-3 items-start">
-                    <div className="w-5 h-5 bg-black text-accent rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-3 h-3" />
-                    </div>
+                     <div className="w-5 h-5 bg-[#FFCC00] text-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                       <CheckCircle2 className="w-4 h-4" />
+                     </div>
                     <span className="text-sm font-bold uppercase tracking-tight">{benefit}</span>
                   </div>
                 ))}
@@ -67,28 +67,28 @@ export default function DistributorPage() {
 
             <div className="grid grid-cols-2 gap-4">
                <div className="bg-zinc-50 p-8 rounded-3xl border border-zinc-100 text-center space-y-4">
-                  <div className="w-12 h-12 bg-black text-accent rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center mx-auto">
                       <Users className="w-6 h-6" />
                    </div>
                   <h4 className="text-2xl font-black font-heading italic">200+</h4>
                   <p className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Active Partners</p>
                </div>
                <div className="bg-zinc-50 p-8 rounded-3xl border border-zinc-100 text-center space-y-4">
-                  <div className="w-12 h-12 bg-black text-accent rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center mx-auto">
                       <MapPin className="w-6 h-6" />
                    </div>
                   <h4 className="text-2xl font-black font-heading italic">6</h4>
                   <p className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Regional Hubs</p>
                </div>
                <div className="bg-zinc-50 p-8 rounded-3xl border border-zinc-100 text-center space-y-4">
-                  <div className="w-12 h-12 bg-black text-accent rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center mx-auto">
                       <Truck className="w-6 h-6" />
                    </div>
                   <h4 className="text-2xl font-black font-heading italic">24h</h4>
                   <p className="text-[10px] font-black uppercase text-zinc-400 tracking-widest">Dispatch Time</p>
                </div>
                <div className="bg-zinc-50 p-8 rounded-3xl border border-zinc-100 text-center space-y-4">
-                  <div className="w-12 h-12 bg-black text-accent rounded-xl flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-[#FFCC00] text-black rounded-xl flex items-center justify-center mx-auto">
                       <TrendingUp className="w-6 h-6" />
                    </div>
                   <h4 className="text-2xl font-black font-heading italic">40%</h4>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -41,6 +43,13 @@ const products = [
 ];
 
 export default function LithiumPage() {
+  const handleInquire = (productName: string) => {
+    const event = new CustomEvent("open-whatsapp-gateway", {
+      detail: { productName }
+    });
+    window.dispatchEvent(event);
+  };
+
   return (
     <main className="min-h-screen bg-zinc-50">
       <Navbar />
@@ -60,9 +69,12 @@ export default function LithiumPage() {
                 Our Tier-1 LiFePO4 cells ensure 15+ years of design life with zero maintenance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}>
-                  <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 font-bold px-8 w-full sm:w-auto h-14 uppercase tracking-widest">Check Retail Price</Button>
-                </Link>
+                <button
+                  onClick={() => handleInquire("General Inquiry")}
+                  className="bg-[#FFCC00] text-black hover:bg-yellow-500 font-bold px-8 w-full sm:w-auto h-14 uppercase tracking-widest rounded-xl transition-all shadow-md active:scale-95"
+                >
+                  Check Retail Price
+                </button>
               </div>
             </div>
             
@@ -116,11 +128,12 @@ export default function LithiumPage() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-zinc-50">
-                   <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="block">
-                      <Button className="w-full bg-zinc-900 text-white hover:bg-[#FFCC00] hover:text-black rounded-xl h-12 font-bold group">
-                        Inquire Now <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                   </Link>
+                  <Button 
+                    onClick={() => handleInquire(product.name)}
+                    className="w-full bg-[#FFCC00] text-black hover:bg-yellow-500 rounded-xl h-12 font-bold group"
+                  >
+                    Inquire Now <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
                 </div>
               </div>
             ))}

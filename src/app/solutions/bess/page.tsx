@@ -21,20 +21,20 @@ export default function BESSPage() {
       <Navbar />
       
       {/* Header Section */}
-      <section className="pt-32 pb-16 bg-black text-white">
+      <section className="pt-32 pb-16 bg-white border-b border-zinc-200 text-black">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl space-y-6">
-            <Badge className="bg-accent text-black hover:bg-yellow-400 font-bold px-4 py-1 uppercase tracking-widest text-xs">Industrial Solution</Badge>
+            <Badge className="bg-[#FFCC00] text-black hover:bg-yellow-500 font-bold px-4 py-1 uppercase tracking-widest text-xs">Industrial Solution</Badge>
             <h1 className="text-4xl md:text-6xl font-heading font-black tracking-tighter uppercase leading-tight">
-              MW-Scale <span className="text-accent">BESS</span> & Industrial Energy Storage
+              MW-Scale <span className="text-[#000000] underline decoration-[#FFCC00]/50 underline-offset-8">BESS</span> & Industrial Energy Storage
             </h1>
-            <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+            <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed font-medium">
               Design, engineering, and deployment of containerized Battery Energy Storage Systems (BESS) for C&I 
               applications, utility-scale peak shaving, and micro-grid stabilization.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="#inquire">
-                <Button size="lg" className="bg-accent text-black hover:bg-yellow-400 font-black px-8 h-14">
+                <Button size="lg" className="bg-[#FFCC00] text-black hover:bg-yellow-500 font-black px-8 h-14 border border-[#FFCC00]">
                   Request Technical Proposal
                 </Button>
               </Link>
@@ -55,7 +55,7 @@ export default function BESSPage() {
 
               <div className="space-y-6">
                 <div className="flex gap-6 p-6 border border-zinc-100 rounded-3xl hover:border-accent transition-colors bg-zinc-50/50">
-                  <div className="w-14 h-14 bg-black text-accent rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-14 h-14 bg-[#FFCC00] text-black rounded-2xl flex items-center justify-center shrink-0">
                     <BarChart3 className="w-7 h-7" />
                   </div>
                   <div className="space-y-2">
@@ -65,7 +65,7 @@ export default function BESSPage() {
                 </div>
 
                 <div className="flex gap-6 p-6 border border-zinc-100 rounded-3xl hover:border-accent transition-colors bg-zinc-50/50">
-                  <div className="w-14 h-14 bg-black text-accent rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-14 h-14 bg-[#FFCC00] text-black rounded-2xl flex items-center justify-center shrink-0">
                     <Building2 className="w-7 h-7" />
                   </div>
                   <div className="space-y-2">
@@ -75,7 +75,7 @@ export default function BESSPage() {
                 </div>
 
                 <div className="flex gap-6 p-6 border border-zinc-100 rounded-3xl hover:border-accent transition-colors bg-zinc-50/50">
-                  <div className="w-14 h-14 bg-black text-accent rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-14 h-14 bg-[#FFCC00] text-black rounded-2xl flex items-center justify-center shrink-0">
                     <Cpu className="w-7 h-7" />
                   </div>
                   <div className="space-y-2">
@@ -87,59 +87,59 @@ export default function BESSPage() {
             </div>
 
             {/* Placeholder for Industrial Image/Diagram */}
-            <div className="relative aspect-square bg-zinc-900 rounded-[2.5rem] overflow-hidden shadow-2xl group border border-zinc-800">
-               <div className="absolute inset-0 bg-gradient-to-tr from-black via-zinc-900/50 to-transparent z-10" />
+            <div className="relative aspect-square bg-zinc-50 rounded-[2.5rem] overflow-hidden shadow-sm group border border-zinc-200">
+               <div className="absolute inset-0 bg-gradient-to-tr from-white via-zinc-50/50 to-transparent z-10" />
                <div className="absolute inset-0 flex items-center justify-center p-12 z-20">
                   <div className="text-center space-y-6">
-                     <p className="text-accent font-mono text-sm tracking-[0.3em] uppercase opacity-50">Engineering Diagram</p>
-                     <h4 className="text-3xl font-heading font-black text-white uppercase tracking-tighter">BESS Container Architecture</h4>
-                     <div className="w-24 h-1 bg-accent mx-auto" />
-                     <p className="text-zinc-400 text-sm max-w-xs mx-auto">Proprietary Thermal Management & String-Level Monitoring Systems.</p>
+                     <p className="text-[#FFCC00] font-mono text-sm tracking-[0.3em] uppercase font-bold">Engineering Diagram</p>
+                     <h4 className="text-3xl font-heading font-black text-black uppercase tracking-tighter">BESS Container Architecture</h4>
+                     <div className="w-24 h-1 bg-[#FFCC00] mx-auto" />
+                     <p className="text-zinc-600 font-medium text-sm max-w-xs mx-auto">Proprietary Thermal Management & String-Level Monitoring Systems.</p>
                   </div>
                </div>
                {/* Decorative grid */}
-               <div className="absolute inset-0 opacity-20 bg-[url('/grid-texture.png')] bg-repeat" />
+               <div className="absolute inset-0 opacity-10 bg-[url('/grid-texture.png')] bg-repeat" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Technical Specs Table */}
-      <section className="py-24 bg-zinc-950 text-white">
+      <section className="py-24 bg-white text-black border-t border-zinc-200">
         <div className="container mx-auto px-6">
           <div className="mb-16">
             <h2 className="text-3xl font-heading font-black uppercase tracking-tight mb-4">Containerized Solution Specs</h2>
-            <div className="h-1 w-20 bg-accent" />
+            <div className="h-1 w-20 bg-[#FFCC00]" />
           </div>
 
-          <div className="overflow-x-auto border border-zinc-800 rounded-3xl">
+          <div className="overflow-x-auto border border-zinc-200 rounded-3xl shadow-sm">
             <table className="w-full text-left">
-              <thead className="bg-zinc-900">
-                <tr className="border-b border-zinc-800">
-                  <th className="p-6 text-sm font-black uppercase tracking-widest text-accent">Feature</th>
-                  <th className="p-6 text-sm font-black uppercase tracking-widest text-accent">EY-POWER 250 (Basic)</th>
-                  <th className="p-6 text-sm font-black uppercase tracking-widest text-accent">EY-POWER 500 (Industrial)</th>
-                  <th className="p-6 text-sm font-black uppercase tracking-widest text-accent">EY-POWER 1000 (MW Scale)</th>
+              <thead className="bg-zinc-50">
+                <tr className="border-b border-zinc-200">
+                  <th className="p-6 text-sm font-black uppercase tracking-widest text-[#FFCC00]">Feature</th>
+                  <th className="p-6 text-sm font-black uppercase tracking-widest text-black">EY-POWER 250 (Basic)</th>
+                  <th className="p-6 text-sm font-black uppercase tracking-widest text-black">EY-POWER 500 (Industrial)</th>
+                  <th className="p-6 text-sm font-black uppercase tracking-widest text-black">EY-POWER 1000 (MW Scale)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-zinc-800">
+              <tbody className="divide-y divide-zinc-200">
                 <tr>
-                  <td className="p-6 font-bold uppercase text-xs">Energy Capacity</td>
-                  <td className="p-6 text-zinc-400">250 kWh</td>
-                  <td className="p-6 text-zinc-400">512 kWh</td>
-                  <td className="p-6 text-zinc-400">1024 kWh+</td>
+                  <td className="p-6 font-bold uppercase text-xs text-zinc-600">Energy Capacity</td>
+                  <td className="p-6 text-zinc-900 font-medium">250 kWh</td>
+                  <td className="p-6 text-zinc-900 font-medium">512 kWh</td>
+                  <td className="p-6 text-zinc-900 font-medium">1024 kWh+</td>
                 </tr>
                 <tr>
-                  <td className="p-6 font-bold uppercase text-xs">Battery Chemistry</td>
-                  <td className="p-6 text-zinc-400" colSpan={3}>Grade-A LiFePO4 (6000+ Cycles)</td>
+                  <td className="p-6 font-bold uppercase text-xs text-zinc-600">Battery Chemistry</td>
+                  <td className="p-6 text-zinc-900 font-medium" colSpan={3}>Grade-A LiFePO4 (6000+ Cycles)</td>
                 </tr>
                 <tr>
-                  <td className="p-6 font-bold uppercase text-xs">Response Time</td>
-                  <td className="p-6 text-zinc-400" colSpan={3}>&lt; 10ms (UPS-Grade)</td>
+                  <td className="p-6 font-bold uppercase text-xs text-zinc-600">Response Time</td>
+                  <td className="p-6 text-zinc-900 font-medium" colSpan={3}>&lt; 10ms (UPS-Grade)</td>
                 </tr>
                 <tr>
-                  <td className="p-6 font-bold uppercase text-xs">Monitoring</td>
-                  <td className="p-6 text-zinc-400" colSpan={3}>Remote Cloud Management & EMS Integration</td>
+                  <td className="p-6 font-bold uppercase text-xs text-zinc-600">Monitoring</td>
+                  <td className="p-6 text-zinc-900 font-medium" colSpan={3}>Remote Cloud Management & EMS Integration</td>
                 </tr>
               </tbody>
             </table>

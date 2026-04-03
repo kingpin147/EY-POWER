@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
@@ -43,19 +44,19 @@ export default function ApplicationsPage() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="py-24 bg-black text-white overflow-hidden relative">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/10 to-transparent blur-3xl rounded-full translate-x-1/2" />
+            <section className="py-24 bg-white border-b border-zinc-200 text-black overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#FFCC00]/20 to-transparent blur-3xl rounded-full translate-x-1/2" />
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-3xl space-y-6">
                         <h1 className="text-4xl lg:text-7xl font-heading font-black tracking-tight leading-[1.1]">
-                            INDUSTRIAL <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">SCALE</span> SOLUTIONS
+                            INDUSTRIAL <br /><span className="text-[#000000] underline decoration-[#FFCC00]/50 underline-offset-8 bg-[#FFCC00] px-2 leading-tight">SCALE</span> SOLUTIONS
                         </h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-xl text-zinc-600 font-medium leading-relaxed">
                             BESS (Battery Energy Storage Systems) engineered to handle Pakistan's largest energy challenges. From 100kWh to 50MWh, we scale with your industry.
                         </p>
                         <div className="pt-4 flex gap-4">
                             <Link href="#inquire">
-                                <Button size="lg" className="bg-accent text-black font-bold h-14 px-8">Consult an Engineer</Button>
+                                <Button size="lg" className="bg-[#FFCC00] border-2 border-[#FFCC00] hover:bg-yellow-500 text-black font-bold h-14 px-8">Consult an Engineer</Button>
                             </Link>
                         </div>
                     </div>
@@ -114,48 +115,43 @@ export default function ApplicationsPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative h-[500px] bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center p-12">
-                        <div className="absolute inset-0 opacity-40 bg-[url('/blueprint-grid.png')] bg-center opacity-10" />
+                    <div className="relative h-[500px] bg-[#FFCC00]/5 rounded-3xl overflow-hidden shadow-sm flex items-center justify-center p-12 border-2 border-zinc-200">
                         <div className="text-center space-y-4 relative z-10">
-                            <div className="w-20 h-1 bg-accent mx-auto" />
-                            <p className="font-mono text-accent text-sm tracking-widest">BESS-M series</p>
-                            <h3 className="text-4xl text-white font-heading font-bold tracking-tight">215kWh MEGA-BLOCK</h3>
-                            <div className="text-zinc-500 text-sm">Industrial High-Density Cabinet</div>
+                            <div className="w-20 h-1 bg-[#FFCC00] mx-auto" />
+                            <p className="font-mono text-[#FFCC00] text-sm tracking-widest font-bold">BESS-M series</p>
+                            <h3 className="text-4xl text-black font-heading font-black tracking-tight">215kWh MEGA-BLOCK</h3>
+                            <div className="text-zinc-600 text-sm font-bold">Industrial High-Density Cabinet</div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Inquiry Section */}
-            <section id="inquire" className="py-24 bg-zinc-900 text-white border-t border-zinc-800">
+            <section id="inquire" className="py-24 bg-zinc-50 text-black border-t border-zinc-200">
                 <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-3xl lg:text-5xl font-heading font-black underline decoration-accent/30 underline-offset-8">CONSULT WITH AN <span className="text-accent">ENGINEER</span></h2>
-                        <p className="text-lg text-zinc-400 leading-relaxed">
+                        <h2 className="text-3xl lg:text-5xl font-heading font-black underline decoration-[#FFCC00]/50 underline-offset-8">CONSULT WITH AN <span className="bg-[#FFCC00] px-1 text-black">ENGINEER</span></h2>
+                        <p className="text-lg text-zinc-600 leading-relaxed font-medium">
                             Have a specific industrial requirement? Our engineering team in Karachi can help design a custom BESS solution for your facility.
                         </p>
                         <div className="grid grid-cols-2 gap-4 pt-4">
                             <div className="space-y-1">
-                                <div className="text-accent font-bold text-xl">24/7</div>
+                                <div className="text-[#FFCC00] font-black text-2xl">24/7</div>
                                 <div className="text-xs uppercase text-zinc-500 font-bold">Uptime Support</div>
                             </div>
                             <div className="space-y-1">
-                                <div className="text-accent font-bold text-xl">48hr</div>
+                                <div className="text-[#FFCC00] font-black text-2xl">48hr</div>
                                 <div className="text-xs uppercase text-zinc-500 font-bold">Design Turnaround</div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <InquiryForm type="b2b" title="Project Inquiry" dark />
+                        <InquiryForm type="b2b" title="Project Inquiry" />
                     </div>
                 </div>
             </section>
 
-            <footer className="mt-auto py-12 bg-black border-t border-white/10 text-white/40 text-sm">
-                <div className="container mx-auto px-6 text-center">
-                    &copy; {new Date().getFullYear()} EY POWER. Engineering Tomorrow, Scaling Today.
-                </div>
-            </footer>
+            <Footer />
         </main>
     );
 }

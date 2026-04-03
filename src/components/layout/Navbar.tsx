@@ -20,7 +20,7 @@ const navLinks = [
 
 export function Navbar() {
     return (
-        <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10 text-white" style={{ backgroundColor: 'rgba(17, 17, 17, 0.9)' }}>
+        <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-zinc-200 text-black bg-white/90">
             <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group shrink-0">
                     <Image 
@@ -49,7 +49,7 @@ export function Navbar() {
                 <div className="hidden lg:flex items-center gap-4">
                     <Link href="/solutions/bess#inquire">
                         <Button
-                            className="bg-accent text-black font-black hover:bg-yellow-400 h-11 px-8 uppercase tracking-widest text-[10px] transition-all active:scale-95 shadow-lg shadow-accent/20 border-b-2 border-black/10"
+                            className="bg-[#FFCC00] text-black font-black hover:bg-yellow-500 h-11 px-8 uppercase tracking-widest text-[10px] transition-all active:scale-95 shadow-md border-b-2 border-black/10"
                         >
                             B2B Inquiry
                         </Button>
@@ -61,7 +61,7 @@ export function Navbar() {
                     {/* B2B Inquiry button on mobile (condensed) */}
                     <Link href="/solutions/bess#inquire" className="hidden sm:block">
                         <Button
-                            className="bg-accent text-black font-black px-4 h-9 text-[10px] uppercase tracking-widest"
+                            className="bg-[#FFCC00] text-black font-black px-4 h-9 text-[10px] uppercase tracking-widest hover:bg-yellow-500"
                         >
                             B2B Inquiry
                         </Button>
@@ -69,14 +69,14 @@ export function Navbar() {
 
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="text-white hover:text-accent p-0 w-10 h-10">
+                            <Button variant="ghost" size="icon" className="text-black hover:text-[#FFCC00] p-0 w-10 h-10">
                                 <Menu className="w-6 h-6" />
                                 <span className="sr-only">Toggle menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="bg-black border-white/10 text-white p-0 flex flex-col">
-                            <SheetHeader className="p-6 border-b border-white/10">
-                                <SheetTitle className="text-white flex items-center gap-3">
+                        <SheetContent side="right" className="bg-white border-zinc-200 text-black p-0 flex flex-col">
+                            <SheetHeader className="p-6 border-b border-zinc-100">
+                                <SheetTitle className="text-black flex items-center gap-3">
                                     <Image 
                                         src="/EY-Power(main) logo.png" 
                                         alt="EY Power Logo" 
@@ -91,15 +91,15 @@ export function Navbar() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className="flex items-center h-14 px-4 text-lg font-bold border-b border-white/5 hover:text-accent transition-colors"
+                                        className="flex items-center h-14 px-4 text-lg font-bold border-b border-zinc-100 hover:text-[#FFCC00] transition-colors"
                                     >
                                         {link.label}
                                     </Link>
                                 ))}
                             </div>
-                            <div className="p-6 mt-auto space-y-3 border-t border-white/10 bg-zinc-900/50">
+                            <div className="p-6 mt-auto space-y-3 border-t border-zinc-200 bg-zinc-50">
                                 <Link href="/solutions/bess#inquire" className="block w-full">
-                                    <Button className="w-full bg-accent text-black hover:bg-yellow-400 h-14 font-black transition-all active:scale-95 uppercase tracking-widest text-xs">
+                                    <Button className="w-full bg-[#FFCC00] text-black hover:bg-yellow-500 h-14 font-black transition-all active:scale-95 uppercase tracking-widest text-xs">
                                         B2B Inquiry
                                     </Button>
                                 </Link>
